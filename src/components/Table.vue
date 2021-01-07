@@ -1,6 +1,6 @@
 <template>
   <div id="table">
-    <table cellspacing="0">
+    <!-- <table cellspacing="0">
       <tr v-for="(user, index) in userslist" :key="index">
         <thead>
           <tr>
@@ -13,13 +13,13 @@
         <tbody>
           <tr>
             <td class="name">{{ user.name }}</td>
-            <td class="role">{{ user.role }}</td>
+            <td class="role">{{ user.role }}</td> -->
             <!-- <td>
               <router-link :to="{ name: 'user', params: { id: user.id } }">
                 view
               </router-link>
             </td> -->
-            <td>{{ user.role }}</td>
+            <!-- <td>{{ user.role }}</td>
             <td>{{ user.role }}</td>
           </tr>
         </tbody>
@@ -27,22 +27,57 @@
           <button @click="viewUser(user.id)">view</button>
         </td>
       </tr>
+    </table> -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Company Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+           <!-- <tr v-for="(user, index) in userslist" :key="index"> -->
+        <tr v-for="(user, index) in users" :key="index">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.company.name }}</td>
+          <td>
+            <button @click="viewUser(user.id)">view</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
   name: "UsersList",
   computed: {
     userslist() {
       return this.$store.getters.userslist;
     },
+    ...mapState([
+      'users'
+    ])
   },
+
+  mounted () {
+    this.$store.dispatch("loadusers");
+  }, 
+
   methods: {
     viewUser(userid) {
       this.$router.push({ name: "user", params: { id: userid } });
-    },
+    }
   },
   data: () => {
     return {
@@ -58,64 +93,27 @@ export default {
   background: #eeeeee;
   font-size: 1rem;
   display: grid;
-  place-content: center;
   padding: 3em;
-
-thead, tbody {
-  // background: yellow;
 }
-
-th, td, tr {
+table {
+   border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  padding: 0.5rem;
   text-align: left;
-  border: 1px solid grey;
-  // padding: 10px;
-  margin: 20px 0;
-  
+  border: 1px solid #ccc;
 }
-  table {
-    width: 600px;
-
-    tr {
-      // margin: 30px;
-      // padding: 15px;
-    }
-    td {
-      padding: 15px;
-    }
-
-   
-    .name {
-      // text-align: left;
-      // max-width: 50px;
-    }
-  }
+tbody tr:hover {
+  background: yellow;
 }
-
-
-// TABLE RESET
-.clear-user-agent-styles table,
-.clear-user-agent-styles thead,
-.clear-user-agent-styles tbody,
-.clear-user-agent-styles tfoot,
-.clear-user-agent-styles tr,
-.clear-user-agent-styles th,
-.clear-user-agent-styles td {
-    display: block;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-collapse: inherit;
-    border-spacing: 0;
-    border-color: inherit;
-    vertical-align: inherit;
-    text-align: left;
-    font-weight: inherit;
-    -webkit-border-horizontal-spacing: 0;
-    -webkit-border-vertical-spacing: 0;
-}
-th, td {
-    // display: inline;
+.api-data {
+  margin-top: 2rem;
+  border: 1px solid blue;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-style: italic;
+  background: #fff;
 }
 </style>
