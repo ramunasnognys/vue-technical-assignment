@@ -51,4 +51,4 @@ Create a Vue.js application that would have 2 pages:
 - Application should be responsive.
 
 ### Vue Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](https://cli.vuejs.org/config/). d
