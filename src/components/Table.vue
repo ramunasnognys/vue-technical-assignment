@@ -47,6 +47,12 @@
           <td>{{ user.phone }}</td>
           <td>{{ user.company.name }}</td>
           <td>
+            <td>
+              <!-- <router-link :to="{ name: 'user', params: { id: user.id } }"> -->
+              <router-link :to="{ name: 'user', params: { id: user.id }}"> here </router-link>
+           
+          </td>
+          <td>
             <button @click="viewUser(user.id)">view</button>
           </td>
         </tr>
@@ -62,8 +68,13 @@ import {mapState} from 'vuex'
 export default {
   name: "UsersList",
   computed: {
+    
     userslist() {
       return this.$store.getters.userslist;
+    },
+
+    loadusers() {
+      return this.$store.getters.loadusers;
     },
     ...mapState([
       'users'
@@ -79,12 +90,9 @@ export default {
       this.$router.push({ name: "user", params: { id: userid } });
     }
   },
-  data: () => {
-    return {
-      status: false,
-    };
-  },
-};
+
+
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
