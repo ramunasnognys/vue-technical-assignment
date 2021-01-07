@@ -7,11 +7,11 @@ Vue.use(Vuex, axios);
 export const store = new Vuex.Store({
   state: {
     userslist: [
-      { id: 1, name: "Mario", role: "Admin" },
-      { id: 2, name: "Ramunas", role: "Leader" },
-      { id: 3, name: "Alice", role: "Leader" },
+      // { id: 1, name: "Mario", role: "Admin" },
+      // { id: 2, name: "Ramunas", role: "Leader" },
+      // { id: 3, name: "Alice", role: "Leader" },
     ],
-    users: [],
+    users: []
   },
 
   getters: {
@@ -19,30 +19,29 @@ export const store = new Vuex.Store({
       return state.userslist;
     },
     user: (state) => (id) => {
-      return state.userslist.find((user) => user.id === id);
-    },
+      return state.users.find((user) => user.id === id);
+    }
   },
 
   // make api call
   actions: {
-    loadusers({commit}) {
+    loadusers({ commit }) {
       axios
-        .get('https://jsonplaceholder.typicode.com/users')
-        .then(data => {
-          console.log(data.data)
-          let users = data.data
-          commit('SET_USERS', users)
-        } )
-        .catch(error => {
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then((data) => {
+          let users = data.data;
+          commit("SET_USERS", users);
+        })
+        .catch((error) => {
           console.log(error);
         });
-    },
+    }
   },
 
   // refresh api state
   mutations: {
-    SET_USERS (state, users) {
-      state.users = users
+    SET_USERS(state, users) {
+      state.users = users;
     }
   }
 })

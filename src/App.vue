@@ -1,28 +1,60 @@
 <template>
   <div id="app">
-    
-    <!-- <router-link to="/">Home</router-link> | -->
-    <router-view></router-view>
-    
+ 
+        <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-name: 'app'
+  name: "app",
+  data() {
+        return {
+            msg: 'Users Table'
+        }
+    }
 };
 </script>
 
 <style lang="scss">
 @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  // background-color: #EEEEEE;
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: center;
+  padding-top: 50px;
+}
+body, html {
+  margin: 0;
+  height: 100%;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  border: 4px solid black;
-  height: 100vh;
-  padding: 2rem;
+    // width: 50%;
+    margin: 10px;
+}
+
+
+nav {
+  padding: 20px 20px 20px 0;
+}
+
+nav a {
+  padding: 10px;
+  text-decoration: none;
+  background: #e2e2e2;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.fas {
+  margin-right: 5px;
 }
 </style>
