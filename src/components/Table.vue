@@ -1,35 +1,9 @@
 <template>
-  <div id="table">
-    <!-- <table cellspacing="0">
-      <tr v-for="(user, index) in userslist" :key="index">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Company Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="name">{{ user.name }}</td>
-            <td class="role">{{ user.role }}</td> -->
-            <!-- <td>
-              <router-link :to="{ name: 'user', params: { id: user.id } }">
-                view
-              </router-link>
-            </td> -->
-            <!-- <td>{{ user.role }}</td>
-            <td>{{ user.role }}</td>
-          </tr>
-        </tbody>
-        <td>
-          <button @click="viewUser(user.id)">view</button>
-        </td>
-      </tr>
-    </table> -->
-
-    <table>
+  <div class="table-section">
+    <nav>
+      <router-link to="/"><i class="fas fa-home"></i>Home</router-link>
+    </nav>
+    <table id="table">
       <thead>
         <tr>
           <th>Name</th>
@@ -39,89 +13,89 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-           <!-- <tr v-for="(user, index) in userslist" :key="index"> -->
-        <tr v-for="(user, index) in users" :key="index">
+        <tr
+          v-for="user in users"
+          @click="viewUser(user.id)"
+          :key="user.id"
+          :class="{ highlight: user.id == selectedUser }"
+        >
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.company.name }}</td>
-          <td>
-            <td>
-              <!-- <router-link :to="{ name: 'user', params: { id: user.id } }"> -->
-              <router-link :to="{ name: 'user', params: { id: user.id }}"> here </router-link>
-           
-          </td>
-          <td>
-            <button @click="viewUser(user.id)">view</button>
-          </td>
         </tr>
       </tbody>
     </table>
-  
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-  name: "UsersList",
+  name: "UsersTable",
+  data() {
+    return {
+      selectedUser: null,
+    };
+  },
   computed: {
-    
     userslist() {
       return this.$store.getters.userslist;
     },
-
-    loadusers() {
-      return this.$store.getters.loadusers;
-    },
-    ...mapState([
-      'users'
-    ])
+    ...mapState(["users"]),
   },
 
-  mounted () {
+  mounted() {
     this.$store.dispatch("loadusers");
-  }, 
+  },
 
   methods: {
     viewUser(userid) {
       this.$router.push({ name: "user", params: { id: userid } });
-    }
+    },
+    selectRow(user) {
+      this.selectedUser = user;
+      //Do other things
+    },
   },
-
-
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #table {
-  background: #eeeeee;
-  font-size: 1rem;
-  display: grid;
-  padding: 3em;
+  // max-width: 1000px;
+  // background: white;
 }
 table {
-   border-collapse: collapse;
+  border-collapse: collapse;
   width: 100%;
 }
+tbody tr:hover {
+  cursor: pointer;
+  background: #1f4465;
+  color: white;
+}
+tbody tr:nth-child(even):hover {
+  background: #1f4465;
+}
+
+tbody tr:nth-child(even) {
+  background: #ecf0f1;
+}
+
 td,
 th {
   padding: 0.5rem;
   text-align: left;
-  border: 1px solid #ccc;
 }
-tbody tr:hover {
-  background: yellow;
+thead {
+  background: #1f4465;
+  color: #e2e2e2;
 }
-.api-data {
-  margin-top: 2rem;
-  border: 1px solid blue;
-  padding: 10px;
-  letter-spacing: 2px;
-  font-style: italic;
-  background: #fff;
+
+.highlight {
+  background-color: pink;
 }
 </style>

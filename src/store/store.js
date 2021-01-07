@@ -20,17 +20,15 @@ export const store = new Vuex.Store({
     },
     user: (state) => (id) => {
       return state.users.find((user) => user.id === id);
-    },
+    }
   },
 
   // make api call
   actions: {
     loadusers({ commit }) {
-      console.log("load posts");
       axios
         .get("https://jsonplaceholder.typicode.com/users")
         .then((data) => {
-          console.log(data.data);
           let users = data.data;
           commit("SET_USERS", users);
         })
