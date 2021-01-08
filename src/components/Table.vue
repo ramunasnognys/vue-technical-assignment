@@ -62,48 +62,61 @@ export default {
 <style scoped lang="scss">
 @media only screen and (max-width: 760px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
-
-    table, thead, tbody, th, td, tr {
-			display: block;
-		}
-
-    thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-     tr {
-      margin: 0 0 1rem 0;
-    }
-
-    td {
-      border-bottom: 1px solid rgb(228, 226, 226);
-      position: relative;
-      padding-left: 50%;
-    }
-
-    td:last-child { 
-            border-bottom: none;
-    }
-
-    td:before {
-      top: 0;
-      left: 6px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
-    }
-
-    td:nth-of-type(n):before { font-weight: bold; margin-right: 10px;}
-
-    td:nth-of-type(1):before { content: "Name:"; }
-		td:nth-of-type(2):before { content: "Email:"; }
-		td:nth-of-type(3):before { content: "Phone:"; }
-		td:nth-of-type(4):before { content: "Company Name:"; }
-
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
   }
-   
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  td {
+    border-bottom: 1px solid rgb(245, 245, 245);
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td:before {
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(n):before {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Name:";
+  }
+  td:nth-of-type(2):before {
+    content: "Email:";
+  }
+  td:nth-of-type(3):before {
+    content: "Phone:";
+  }
+  td:nth-of-type(4):before {
+    content: "Company Name:";
+  }
+}
 
 table {
   border-collapse: collapse;
