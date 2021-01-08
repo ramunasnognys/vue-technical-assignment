@@ -1,7 +1,6 @@
 <template>
   <div id="app">
- 
-        <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,10 +8,10 @@
 export default {
   name: "app",
   data() {
-        return {
-            msg: 'Users Table'
-        }
-    }
+    return {
+      msg: "Users Table",
+    };
+  },
 };
 </script>
 
@@ -24,21 +23,21 @@ export default {
 
 body {
   // background-color: #EEEEEE;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: grid;
   grid-template-rows: auto;
   justify-items: center;
   padding-top: 50px;
 }
-body, html {
+body,
+html {
   margin: 0;
   height: 100%;
 }
 #app {
-    // width: 50%;
-    margin: 10px;
+  // width: 50%;
+  margin: 10px;
 }
-
 
 nav {
   padding: 20px 20px 20px 0;

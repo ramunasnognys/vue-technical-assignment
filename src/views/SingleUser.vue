@@ -2,7 +2,6 @@
   <div id="user">
     <h1 class="header-title">{{ userTitle }}</h1>
 
-    <!-- <router-link to="/"><i class="fas fa-home"></i></router-link> -->
     <div class="card">
       <header class="card__header">
         <h1 class="card__user-name">
@@ -36,7 +35,7 @@
       </p>
       <div class="card__footer">
         <router-link to="/" class="card__back">
-          <li data-hover="home page"><a href="">go back</a></li>
+          <li data-hover="users page"><a href="">go back</a></li>
         </router-link>
       </div>
     </div>
