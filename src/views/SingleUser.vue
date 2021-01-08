@@ -64,20 +64,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+$breakpoint-alpha: 600px;
+
 .header-title {
   font-size: 5rem;
   text-align: center;
   opacity: 0.1;
+
+   @media (max-width: $breakpoint-alpha) {
+     font-size: 3rem;
+   }
 }
 
 .card {
   padding: 30px;
-  flex: 1 1 200px;
-  flex-basis: 120px;
   background: #f0f0f0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.4);
+    @media (max-width: $breakpoint-alpha) { 
+      margin-top: 20px;
+      padding: 20px;
+      }
+
 
   &__user-name {
     font-size: 1.5rem;
@@ -103,12 +112,10 @@ export default {
   }
 
 // card body
-$breakpoint-alpha: 480px;
-
 .table {
   margin: 1em 0;
-  min-width: 500px;
-
+  min-width: 300px;
+  @media (min-width: $breakpoint-alpha) { min-width: 400px;}
   th,
   td.item {
     text-align: left;
@@ -146,7 +153,6 @@ $breakpoint-alpha: 480px;
 
 // go back link
   .card__back {
-    width: 500px;
     margin: 5% auto;
     text-align: center;
     
@@ -198,5 +204,5 @@ $breakpoint-alpha: 480px;
 }
 
 
-
+ 
 </style>
