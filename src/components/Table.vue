@@ -121,6 +121,7 @@ export default {
 table {
   border-collapse: collapse;
   font-size: 16px;
+  margin-bottom: 60px;
 }
 
 tbody tr:hover {
