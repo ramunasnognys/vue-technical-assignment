@@ -1,6 +1,6 @@
 ## Vue Technical Assignment
 
-You can view the demo aplication [**here**]()
+You can view the demo aplication [**here**](https://vue-technical-assignment.vercel.app/)
 
 <b>Includes:</b>
 - [**Vue.js**](https://vuejs.org//) JavaScript framework (version 2.6.11)
@@ -51,4 +51,4 @@ Create a Vue.js application that would have 2 pages:
 - Application should be responsive.
 
 ### Vue Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](https://cli.vuejs.org/config/). d
