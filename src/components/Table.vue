@@ -1,6 +1,6 @@
 <template>
   <div class="table-section">
-    <table role="table" id="table">
+    <table role="table">
       <thead role="rowgroup">
         <tr role="row">
           <th role="columnheader">Name</th>
