@@ -59,7 +59,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @media only screen and (max-width: 760px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -108,6 +107,7 @@ export default {
 
 table {
   border-collapse: collapse;
+  font-size: 16px;
 }
 
 tbody tr:hover {
