@@ -8,22 +8,28 @@
 
 <script>
 export default {
-  name: "d",
+  name: "Users",
 
   data() {
     return {
       usersTitle: "Users Table",
     };
   },
-  mounted() {},
   methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
+$breakpoint-alpha: 600px;
+
 .header-title {
-    font-size: 5rem;
-    text-align: center;
-    opacity: .2;
+  font-size: 5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  opacity: 0.2;
+
+  @media (max-width: $breakpoint-alpha) {
+    font-size: 3rem;
   }
+}
 </style>
