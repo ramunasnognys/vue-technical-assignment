@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       blogs: [],
-      userTitle: "Single User",
+      userTitle: "User Profile",
     };
   },
 
@@ -83,105 +83,26 @@ export default {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     font-weight: bold;
-
   }
 
   .address {
     margin-top: 1rem;
     text-align: center;
   }
-  
+
   &__footer {
     margin: 2rem 0 1rem;
     text-align: right;
   }
 
-//
   a,
   li {
     display: block;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font: 300 1em/1.5 "Open Sans", "Helvetica Neue", Arial, sans-serif;
     text-decoration: none;
-    color: #111;
+    color: black;
   }
 
-  html,
-  body {
-    background: rgb(236, 240, 241);
-  }
-
-  .card__back {
-    width: 500px;
-    margin: 5% auto;
-    text-align: center;
-  }
-  h1 {
-    font-size: 2em;
-    padding: 20px 0;
-  }
-
-  li:hover {
-    cursor: pointer;
-  }
-  li {
-    background: transparent;
-    outline: none;
-    position: relative;
-    padding: 15px 50px;
-    overflow: hidden;
-  }
-
-  li:hover:before {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-  li:before {
-    content: attr(data-hover);
-    position: absolute;
-    top: 1.1em;
-    left: 0;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-    font-size: 0.8em;
-    opacity: 0;
-    transform: translate(-100%, 0);
-    transition: all 0.4s ease-in-out;
-  }
-  /*li div (li text before hover)*/
-  li:hover a {
-    opacity: 0;
-    transform: translate(100%, 0);
-  }
-  li a {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-    font-size: 0.8em;
-    transition: all 0.4s ease-in-out;
-  }
-}
-
-i {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: black;
-}
-
-ul,
-li {
-  list-style: none;
-  text-decoration: none;
-}
-
+// card body
 $breakpoint-alpha: 480px;
 
 .table {
@@ -222,4 +143,60 @@ $breakpoint-alpha: 480px;
     }
   }
 }
+
+// go back link
+  .card__back {
+    width: 500px;
+    margin: 5% auto;
+    text-align: center;
+    
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
+  li {
+    background: transparent;
+    outline: none;
+    position: relative;
+    padding: 15px 50px;
+    overflow: hidden;
+  }
+
+  li:hover:before {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  li:before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 1.1em;
+    left: 0;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+    font-size: 0.8em;
+    opacity: 0;
+    transform: translate(-100%, 0);
+    transition: all 0.4s ease-in-out;
+  }
+  /*li div (li text before hover)*/
+  li:hover a {
+    opacity: 0;
+    transform: translate(100%, 0);
+    
+  }
+  li a {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+    font-size: 0.8em;
+    transition: all 0.4s ease-in-out;
+    color: #111;
+  }
+}
+
+
+
 </style>
