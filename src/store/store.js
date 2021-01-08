@@ -6,12 +6,7 @@ Vue.use(Vuex, axios);
 
 export const store = new Vuex.Store({
   state: {
-    userslist: [
-      // { id: 1, name: "Mario", role: "Admin" },
-      // { id: 2, name: "Ramunas", role: "Leader" },
-      // { id: 3, name: "Alice", role: "Leader" },
-    ],
-    users: []
+    users: [],
   },
 
   getters: {
@@ -20,7 +15,7 @@ export const store = new Vuex.Store({
     },
     user: (state) => (id) => {
       return state.users.find((user) => user.id === id);
-    }
+    },
   },
 
   // make api call
@@ -35,13 +30,13 @@ export const store = new Vuex.Store({
         .catch((error) => {
           console.log(error);
         });
-    }
+    },
   },
 
   // refresh api state
   mutations: {
     SET_USERS(state, users) {
       state.users = users;
-    }
-  }
-})
+    },
+  },
+});

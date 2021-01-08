@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" >
+    <div class="icon-logo"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -21,39 +22,27 @@ export default {
   box-sizing: border-box;
 }
 
-body {
-  // background-color: #EEEEEE;
-  font-family: "Montserrat", sans-serif;
-  display: grid;
-  grid-template-rows: auto;
-  justify-items: center;
-  padding-top: 50px;
-}
 body,
 html {
   margin: 0;
   height: 100%;
 }
+
+body {
+  background: rgb(255, 247, 247);
+
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: center;
+  padding-top: 50px;
+
+}
+
 #app {
-  // width: 50%;
   margin: 10px;
+  opacity: .7;
+
 }
 
-nav {
-  padding: 20px 20px 20px 0;
-}
-
-nav a {
-  padding: 10px;
-  text-decoration: none;
-  background: #e2e2e2;
-  border-radius: 3px;
-  color: black;
-  font-weight: bold;
-  margin-right: 15px;
-}
-
-.fas {
-  margin-right: 5px;
-}
 </style>

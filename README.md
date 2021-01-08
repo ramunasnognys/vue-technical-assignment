@@ -43,12 +43,3 @@ Create a Vue.js application that would have 2 pages:
 2. https://jsonplaceholder.typicode.com/users/{id}
 
 
-## Important remarks
-- Please use a custom styling and components (No bootstrap, tailwind, Vuetify, etc.)
-- Application is written in Vue2 (no typescript)
-- For Api request, please use VuexStore and axios
-- Deploy project using git and share link with us from your repository.
-- Application should be responsive.
-
-### Vue Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/). d

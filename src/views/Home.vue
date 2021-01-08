@@ -1,5 +1,5 @@
 <template>
-  <div id="users-section">
+  <div id="users">
     <h1 class="header-title">{{ usersTitle }}</h1>
 
     <app-table></app-table>
@@ -23,10 +23,11 @@ export default {
 $breakpoint-alpha: 600px;
 
 .header-title {
+  
   font-size: 5rem;
   margin-bottom: 40px;
   text-align: center;
-  opacity: 0.2;
+  opacity: 0.1;
 
   @media (max-width: $breakpoint-alpha) {
     font-size: 3rem;
